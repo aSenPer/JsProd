@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-inline-css": "^3.5.0"
+  },
+  "dependencies": {
+    
+  }
+}

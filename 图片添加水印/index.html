@@ -1,0 +1,46 @@
+<!--
+ * @Date: 2020-06-12 12:11:54
+ * @LastEditors: ZJT
+ * @LastEditTime: 2020-06-29 10:40:03
+ * @FilePath: \codeTest\JsProd\图片添加水印\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+  </style>
+</head>
+
+<body>
+  <img class="sample2" data-img2blob="./ts.png" width="500" alt="">
+  <a href="" target="_blank">下载</a>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./img2blob.js"></script>
+  <script>
+    $(function () {
+      // with watermark
+      $(".sample2").img2blob({
+        watermark: 'ZJT',
+        fontStyle: "Georgia, 'Times New Roman', Times, serif",
+        fontSize: '200', // px
+        fontColor: '#D3C79E', // default 'black'
+        fontX: 880, // The x coordinate where to start painting the text
+        fontY: 1780 // The y coordinate where to start painting the text
+      });
+      setTimeout(function () {
+        $("a").attr('href', $(".sample2").attr('src')).attr('download', 'pic')
+      }, 3000)
+    });
+  </script>
+</body>
+
+</html>
